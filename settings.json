@@ -28,7 +28,7 @@
     "workbench.settings.openDefaultSettings": true,
     "workbench.settings.useSplitJSON": true,
     "workbench.iconTheme": "vscode-great-icons",
-    "files.hotExit": "off",
+    "files.hotExit": "onExitAndWindowClose",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
@@ -62,7 +62,6 @@
         "**/tmp/**": true,
         "**/vendor/**": true
     },
-    "git.enabled": false,
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "[python]":
@@ -79,5 +78,31 @@
         "rubocop": true
     },
     "ruby.intellisense": "rubyLocate",
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.inlineSuggest.enabled": true,
+    "window.zoomLevel": -1,
+    "github.copilot.enable": {
+      "*": true,
+      "yaml": true,
+      "plaintext": false,
+      "markdown": true,
+      "python": true
+    },
+    "files.associations": {
+      "**/dbt/**/*.yaml": "jinja-yaml",
+      "**/dbt/**/*.yml": "jinja-yaml",
+      "**/dbt/**/*.sql": "jinja-sql",
+      "**/dbt/**/*.md": "jinja-md"
+    },
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "[jinja-yaml]": {},
+    "[markdown]": {
+      "editor.unicodeHighlight.ambiguousCharacters": false,
+      "editor.unicodeHighlight.invisibleCharacters": false,
+      "editor.wordWrap": "on",
+      "editor.quickSuggestions": false
+    },
+    "files.autoSave": "afterDelay"
 }

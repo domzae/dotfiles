@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
-plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
+plugins=(git gitfast gcloud terraform last-working-dir common-aliases zsh-syntax-highlighting zsh-autosuggestions history-substring-search pyenv ssh-agent)
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -21,7 +21,8 @@ export PATH="${HOME}/.rbenv/bin:${PATH}" # Needed for Linux/WSL
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
 # Load pyenv (to manage your Python versions)
-export PATH="${HOME}/.pyenv/bin:${PATH}" # Needed for Linux/WSL
+# export PATH="${HOME}/.pyenv/bin:${PATH}" # Needed for Linux/WSL
+typeset -U PATH
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1 # https://github.com/pyenv/pyenv-virtualenv/issues/135
 type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv_prompt_info)]'
 
@@ -66,3 +67,8 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export BUNDLER_EDITOR=code #"subl $@ >/dev/null 2>&1 -a"
 
+# Use ipdb as the default debugging breakpoint
+export PYTHONBREAKPOINT=ipdb.set_trace
+
+#GCP
+# export GOOGLE_APPLICATION_CREDENTIALS=/Users/dominikwagner/gcp/mysql-bigquery-344715-50ab621ac97d.json
