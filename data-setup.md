@@ -423,7 +423,7 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include"
 Then try to install Python again:
 
 ```bash
-pyenv install 3.8.12
+pyenv install 3.9.11
 ```
 
 It could raise another error about `bzip2`, you can ignore it and continue to the next step.
